@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
+import { BrowserRouter, Switch, Route, NavLink , Link} from "react-router-dom";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
 import NotFound from "./components/404/NotFound.js";
@@ -25,13 +25,12 @@ class App extends Component {
   await actions.logOut();
     this.setUser({ email: null, createdAt: null, updatedAt: null, _id: null }); //FIX
   };
-
   render() {
     return (
       <BrowserRouter>
         {this.state.email}
         <nav>
-          <NavLink to="/"> Home|</NavLink>
+          <NavLink to="/home"> Home|</NavLink>
           <NavLink to="/about">About |</NavLink>
 
           {this.state.email ? (
@@ -48,21 +47,23 @@ class App extends Component {
             </Fragment>
           )}
         </nav>
+        
 
         <Switch>
-          <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route exact path="/" render={(props) => <LogIn{...props} />} />
+          <Route exact path="/home" render={(props) => <Home {...props} />} />
           <Route exact path="/about" render={(props) => <About {...props} />} />
           <Route
             exact
             path="/sign-up"
             render={(props) => <SignUp {...props} setUser={this.setUser} />}
           />
-          <Route
+           <Route
             exact
             path="/log-in"
             render={(props) => <LogIn {...props} setUser={this.setUser} />}
           />
-          <Route
+          <Route 
             exact
             path="/profile"
             render={(props) => <Profile {...props} user={this.state} />}
