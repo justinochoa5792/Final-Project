@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import { MDBCard, MDBCardText } from "mdbreact";
 import actions from "../services/index";
 
 class quiz extends Component {
   state = {
     questions: [],
     answer: "",
-    correct:0,
-    incorrect:0,
+    correct: 0,
+    incorrect: 0,
   };
 
   async componentDidMount() {
@@ -19,22 +20,22 @@ class quiz extends Component {
   answerQuestion = (choice, answer) => {
     console.log(choice, answer);
     if (choice !== answer) {
-       alert("incorrect");
-       this.setState({
-        incorrect: this.state.incorrect +1
-       })
+      alert("incorrect");
+      this.setState({
+        incorrect: this.state.incorrect + 1,
+      });
     } else {
-     alert("correct");
-     this.setState({
-         correct: this.state.correct +1
-     })
+      alert("correct");
+      this.setState({
+        correct: this.state.correct + 1,
+      });
     }
   };
   showQuestions = () => {
     return this.state.questions.map((eachQuestion) => {
       let buttons = eachQuestion.choices.map((choice) => {
         return (
-          <button
+          <button style={{height:'50px'}}
             onClick={() => this.answerQuestion(choice, eachQuestion.answer)}
           >
             {choice}
@@ -42,10 +43,20 @@ class quiz extends Component {
         );
       });
       return (
-        <li>
-          {eachQuestion.question}
-          {buttons}
-        </li>
+        <MDBCard
+          className="card"
+          style={{ width: "40vw", height: "150px", margin:'15px', alignContent:'center' }}>
+          <header
+            style={{
+              height: "47px",
+              textAlign: "center",
+              backgroundColor: "#007bff",
+              color: "white",
+            }}>
+            {eachQuestion.question}
+          </header>
+         {buttons}
+        </MDBCard>
       );
     });
   };
@@ -57,7 +68,6 @@ class quiz extends Component {
         <h3>Correct:{this.state.correct}</h3>
         <h3>Incorrect:{this.state.incorrect}</h3>
         {this.showQuestions()}
-        
       </div>
     );
   }

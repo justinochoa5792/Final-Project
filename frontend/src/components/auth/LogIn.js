@@ -17,21 +17,20 @@ class LogIn extends Component {
     }
     render() {
         return (
+            <div className='background'>
+            <div className='login'>
             <Fragment>
             <h1>Welcome to Iron Study Guide</h1>
-                <h2>Log In</h2>
+                <h2>Log In or Sign Up</h2>
                 <form onSubmit={this.handleSubmit}>
                     <input name="email" type="email" placeholder='juan23@gmail.com' onChange={this.handleChange} />
                     <input name="password" type="password" placeholder= '1234' onChange={this.handleChange} />
                    <Link to ='/home'> <input type="submit" value="Log In"/></Link>
-                </form>
-                <h2>Sign Up</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <input name="email" type="email" placeholder= 'john@gmail.com' onChange={this.handleChange} />
-                    <input name="password" type="password" placeholder= "1234" onChange={this.handleChange} />
-                   <Link to='/home'><input type="submit" value="Sign Up"/></Link>
+                   <Link to ='/home'><input type="submit" value="Sign Up"/></Link>
                 </form>
             </Fragment>
+            </div>
+            </div>
         );
     }
 }

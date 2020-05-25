@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 class Home extends Component {
   render() {
     return (
+      <div>
+        <nav>
+hello
+        </nav>
       <section className="text-center my-5">
         <h2 className="h1-responsive font-weight-bold my-5">
           Iron Study Guide
@@ -44,7 +48,7 @@ class Home extends Component {
             <MDBCard
               className="card-image"
               style={{
-                backgroundImage: "url(/images/images.jpg)",
+                backgroundImage: "url(/images/book.png)",
                 backgroundSize: "cover",
                 alignItems: "center",
               }}
@@ -96,6 +100,7 @@ class Home extends Component {
           </MDBCol>
         </MDBContainer>
       </section>
+      </div>
     );
   }
 }

@@ -22,4 +22,15 @@ flex-direction:row;
 justify-content: space-evenly;
 align-items: flex-end; 
 }
-
+.login{
+  padding: 10px;
+  display: grid;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  }
+ 
+.background{
+  background-image:url('/images/desk.jpg');
+  height: 100vh;
+}
