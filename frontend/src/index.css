@@ -32,5 +32,13 @@ align-items: flex-end;
  
 .background{
   background-image:url('/images/desk.jpg');
+  background-size: cover;
   height: 100vh;
+  
+}
+.about{
+  background-image: url('/images/desk2.jpg');
+  background-size: cover;
+  height: 100vh;
+  color: white;
 }

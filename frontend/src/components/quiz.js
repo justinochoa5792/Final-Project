@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { MDBCard, MDBCardText } from "mdbreact";
+import { MDBCard } from "mdbreact";
+import { NavLink} from "react-router-dom"
 import actions from "../services/index";
 
 class quiz extends Component {
@@ -45,7 +46,7 @@ class quiz extends Component {
       return (
         <MDBCard
           className="card"
-          style={{ width: "40vw", height: "150px", margin:'15px', alignContent:'center' }}>
+          style={{ width: "40vw", height: "150px", margin:'15px', alignContent:'center'}}>
           <header
             style={{
               height: "47px",
@@ -63,11 +64,20 @@ class quiz extends Component {
 
   render() {
     return (
+      <div>
+        <nav>
+        <NavLink to="/home"> Home|</NavLink>
+        <NavLink to="/about">About |</NavLink>
+        <NavLink onClick={this.logOut} to="/">
+        Log Out |
+      </NavLink>
+        </nav>
       <div className="question">
         <h2>Choose the correct answer</h2>
         <h3>Correct:{this.state.correct}</h3>
         <h3>Incorrect:{this.state.incorrect}</h3>
         {this.showQuestions()}
+      </div>
       </div>
     );
   }

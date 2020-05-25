@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import actions from "../services/index";
-import {
-  MDBContainer,
-  MDBCollapse,
-  MDBCard,
-  MDBCardBody,
-  MDBCollapseHeader,
-} from "mdbreact";
+import { MDBContainer,MDBCollapse, MDBCard, MDBCardBody, MDBCollapseHeader,} from "mdbreact";
+import {NavLink} from 'react-router-dom';
 
 class definition extends Component {
   state = {
@@ -47,8 +42,15 @@ class definition extends Component {
 // }
 render() {
   const { collapseID } = this.state;
-  
   return (
+    <div>
+        <nav>
+        <NavLink to="/home"> Home|</NavLink>
+        <NavLink to="/about">About |</NavLink>
+        <NavLink onClick={this.logOut} to="/">
+        Log Out |
+      </NavLink>
+        </nav>
     <MDBContainer>
       <h2>Definitions</h2>
         <MDBContainer className="mt-5">
@@ -89,6 +91,7 @@ render() {
           </MDBCard>
         </MDBContainer>
       </MDBContainer>
+    </div>
       );
     }
   }

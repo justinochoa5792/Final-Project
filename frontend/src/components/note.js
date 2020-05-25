@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {NavLink} from 'react-router-dom';
 import actions from "../services/index";
 
 class note extends Component {
@@ -43,6 +44,14 @@ class note extends Component {
 
   render() {
     return (
+      <div>
+  <nav>
+        <NavLink to="/home"> Home|</NavLink>
+        <NavLink to="/about">About |</NavLink>
+        <NavLink onClick={this.logOut} to="/">
+        Log Out |
+      </NavLink>
+        </nav>
       <form onSubmit={(e) => this.handleSubmit(e)}>
         <h4>Make your own notes</h4>
         <div className="md-form md-outline">
@@ -60,6 +69,7 @@ class note extends Component {
         </button>
         {this.printNotes()}
       </form>
+      </div>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBCol, MDBCard, MDBIcon, MDBBtn } from "mdbreact";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 // import actions from '../../services/index'
 
 class Home extends Component {
@@ -8,7 +8,11 @@ class Home extends Component {
     return (
       <div>
         <nav>
-hello
+        <NavLink to="/home"> Home|</NavLink>
+        <NavLink to="/about">About |</NavLink>
+        <NavLink onClick={this.logOut} to="/">
+        Log Out |
+      </NavLink>
         </nav>
       <section className="text-center my-5">
         <h2 className="h1-responsive font-weight-bold my-5">
@@ -17,7 +21,8 @@ hello
         <p className="grey-text w-responsive mx-auto mb-5">
           A multifunctional study guide that lets you test your knowledge with a
           multiple choice quiz. <br /> Refresh your memory with the defintion
-          section. As well as make your own notes.
+          section. As well as a section that allows you to write
+         <br/>your own notes as needed.
         </p>
 
         <MDBContainer className="d-flex flex-wrap">

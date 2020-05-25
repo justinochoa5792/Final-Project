@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-import { BrowserRouter, Switch, Route, NavLink} from "react-router-dom";
+import React, { Component} from "react";
+import { BrowserRouter, Switch, Route} from "react-router-dom";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
 import NotFound from "./components/404/NotFound.js";
@@ -27,23 +27,6 @@ class App extends Component {
   render() {
     return (
   <BrowserRouter>
-{/* {this.state.email}
-<nav>
-  <NavLink to="/home"> Home|</NavLink>
-  <NavLink to="/about">About |</NavLink>
-
-  {this.state.email ? (
-    <Fragment>
-      <NavLink to="/profile">Profile|</NavLink>
-    </Fragment>
-  ) : (
-    <Fragment>
-      <NavLink onClick={this.logOut} to="/">
-        Log Out |
-      </NavLink>
-    </Fragment>
-  )}
-</nav> */}
         <Switch>
           <Route exact path="/" render={(props) => <LogIn{...props} />} />
           <Route exact path="/home" render={(props) => <Home {...props} />} />
