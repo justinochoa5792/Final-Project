@@ -72,7 +72,7 @@ class quiz extends Component {
         Log Out |
       </NavLink>
         </nav>
-      <div className="question">
+      <div className="question" style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
         <h2>Choose the correct answer</h2>
         <h3>Correct:{this.state.correct}</h3>
         <h3>Incorrect:{this.state.incorrect}</h3>

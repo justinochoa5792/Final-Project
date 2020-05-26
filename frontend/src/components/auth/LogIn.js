@@ -25,7 +25,7 @@ class LogIn extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <input name="email" type="email" placeholder='juan23@gmail.com' onChange={this.handleChange} />
                     <input name="password" type="password" placeholder= '1234' onChange={this.handleChange} />
-                   <Link to ='/home'> <input type="submit" value="Log In"/></Link>
+                   <input type="submit" value="Log In"/>
                    <Link to ='/home'><input type="submit" value="Sign Up"/></Link>
                 </form>
             </Fragment>

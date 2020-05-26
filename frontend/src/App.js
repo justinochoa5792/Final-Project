@@ -31,31 +31,11 @@ class App extends Component {
           <Route exact path="/" render={(props) => <LogIn{...props} />} />
           <Route exact path="/home" render={(props) => <Home {...props} />} />
           <Route exact path="/about" render={(props) => <About {...props} />} />
-           <Route
-            exact
-            path="/log-in"
-            render={(props) => <LogIn {...props} setUser={this.setUser} />}
-          />
-          <Route 
-            exact
-            path="/profile"
-            render={(props) => <Profile {...props} user={this.state} />}
-          />
-          <Route
-            exact
-            path="/quiz"
-            render={(props) => <Quiz {...props} user={this.state} />}
-          />
-          <Route
-            exact
-            path="/definition"
-            render={(props) => <Definition {...props} user={this.state} />}
-          />
-          <Route
-            exact
-            path="/note"
-            render={(props) => <Note {...props} user={this.state} />}
-          />
+           {/* <Route exact path="/log-in" render={(props) => <LogIn {...props} setUser={this.setUser} />}/> */}
+          <Route exact path="/profile" render={(props) => <Profile {...props} user={this.state} />} />
+          <Route exact path="/quiz" render={(props) => <Quiz {...props} user={this.state} />}/>
+          <Route exact path="/definition" render={(props) => <Definition {...props} user={this.state} />}/>
+          <Route exact path="/note" render={(props) => <Note {...props} user={this.state} />}/>
           <Route component={NotFound} />
           </Switch>
           </BrowserRouter>
