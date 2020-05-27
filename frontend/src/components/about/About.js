@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom"
+import {MDBBtn} from 'mdbreact'
+
 class About extends Component {
     render() {
         return (
             <div className='about'>
              <nav>
-        <NavLink style={{color:'white'}} to="/home"> Home  |</NavLink>
-        <NavLink style={{color:'white'}} to="/about"> About |</NavLink>
-        <NavLink style={{color:'white'}} onClick={this.logOut} to="/">
-        Log Out |
-      </NavLink>
+             <MDBBtn><NavLink to="/home" style={{color:'white'}}> Home </NavLink></MDBBtn>
+        <MDBBtn><NavLink to="/about" style={{color:'white'}}>About </NavLink></MDBBtn>
         </nav>
                 <h1 style={{fontWeight:'bold', textAlign:'center'}}>About Us</h1>
                 <h3 style={{fontWeight:'bold', textAlign:'center'}}> Iron study guide is a solo project done by Justin Ochoa.

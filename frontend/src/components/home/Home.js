@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBCol, MDBCard, MDBIcon, MDBBtn } from "mdbreact";
 import { NavLink, Link } from "react-router-dom";
-// import actions from '../../services/index'
+import actions from '../../services/index'
 
 class Home extends Component {
   render() {
     return (
       <div>
-        <nav>
-        <NavLink to="/home"> Home|</NavLink>
-        <NavLink to="/about">About |</NavLink>
-        <NavLink onClick={this.logOut} to="/">
-        Log Out |
+        <nav className='mdbtn'>
+      <MDBBtn><NavLink to="/home" style={{color:'white'}}> Home </NavLink></MDBBtn>
+        <MDBBtn><NavLink to="/about" style={{color:'white'}}>About </NavLink></MDBBtn>
+        <NavLink  to="/">
+          <MDBBtn onClick={actions.logOut} type="button">
+                LogOut
+          </MDBBtn>
       </NavLink>
         </nav>
       <section className="text-center my-5">

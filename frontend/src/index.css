@@ -25,8 +25,8 @@ align-items: flex-end;
 .login{
   padding: 10px;
   display: grid;
-  justify-content: center;
-  color: white;
+  justify-content: center;;
+  color:white ;
   font-size: 20px;
   }
  
@@ -41,4 +41,13 @@ align-items: flex-end;
   background-size: cover;
   height: 100vh;
   color: white;
+}
+.fa-angle-down:before {
+  content: "\f107";
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.mdbtn{
+background-color:'#1976d2'
 }
