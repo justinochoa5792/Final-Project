@@ -29,7 +29,7 @@ class LogIn extends Component {
                     <input name="email" type="email" placeholder='juan23@gmail.com' onChange={this.handleChange} />
                     <input name="password" type="password" placeholder= '1234' onChange={this.handleChange} />
                    <input type="submit" value="Log In"/>
-                  <Link><input type="submit" value="enter"/></Link> 
+                  <Link to='/home'><input type="submit" value="enter"/></Link> 
                 </form>
             </Fragment>
             </div>
