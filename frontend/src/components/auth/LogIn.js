@@ -1,7 +1,6 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment} from "react";
 import actions from "../../services/index";
-import { Link, withRouter, Redirect } from "react-router-dom";
-// import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+import { Link } from "react-router-dom";
 
 class LogIn extends Component {
   state = {};
@@ -17,40 +16,35 @@ class LogIn extends Component {
       })
       .catch(({ response }) => console.error(response));
   };
-
   render() {
-    console.log(this)
     if(this.props.user?._id){
         this.props.history.push('/home')
     }
     return (
-      <div className="background">
-
-        <div className="login">
-        <Fragment>
-            <h1>Welcome to Iron Study Guide</h1>
-            <h2>Log In or Sign Up</h2>
-            <form onSubmit={this.handleSubmit}>
-              <input
-                name="email"
-                type="email"
-                placeholder="juan23@gmail.com"
-                onChange={this.handleChange}
-              />
-              <input
-                name="password"
-                type="password"
-                placeholder="1234"
-                onChange={this.handleChange}
-              />
-              <input type="submit" value="Log In" />
-              <Link to="/home">
-                <input type="submit" value="enter" />
-              </Link>
-            </form>
-          </Fragment>
-          </div>
-        </div>
+  <div className="background">
+   <div className="login">
+    <Fragment>
+        <h1>Welcome to Iron Study Guide</h1>
+        <h2>Log In or Sign Up</h2>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            name="email"
+            type="email"
+            placeholder="juan23@gmail.com"
+            onChange={this.handleChange}
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="1234"
+            onChange={this.handleChange}
+          />
+          <input type="submit" value="Log In" />
+          <p>Not a member?<Link to='/sign-up' style={{color:'white'}}>Sign Up</Link></p>
+          </form>
+      </Fragment>
+    </div>
+      </div>
     )
   }
 }

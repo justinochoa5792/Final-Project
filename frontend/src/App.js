@@ -1,5 +1,5 @@
-import React, { Component, Fragment} from "react";
-import { BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
+import React, { Component} from "react";
+import { BrowserRouter, Switch, Route} from "react-router-dom";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
 import NotFound from "./components/404/NotFound.js";
@@ -9,6 +9,7 @@ import actions from "./services/index";
 import Quiz from "./components/quiz";
 import Definition from "./components/definition";
 import Note from "./components/note";
+import SignUp from "./components/auth/SignUp";
 
 
 class App extends Component {
@@ -32,7 +33,7 @@ class App extends Component {
           <Route exact path="/" render={(props) => <LogIn user={this.state} {...props} setUser={this.setUser}/>} />
           <Route exact path="/home" render={(props) => <Home {...props} setUser={this.setUser} />} />
           <Route exact path="/about" render={(props) => <About {...props} />} />
-           {/* <Route exact path="/log-in" render={(props) => <LogIn {...props} setUser={this.setUser} />}/> */}
+           <Route exact path="/sign-up" render={(props) => <SignUp user={this.state} {...props} setUser={this.setUser} />}/>
           <Route exact path="/profile" render={(props) => <Profile {...props} user={this.state} />} />
           <Route exact path="/quiz" render={(props) => <Quiz {...props} user={this.state} />}/>
           <Route exact path="/definition" render={(props) => <Definition {...props} user={this.state} />}/>
