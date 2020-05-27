@@ -47,7 +47,7 @@ class note extends Component {
     return (
       <div>
   <nav>
-  <nav>
+  <nav className='mdbtn'>
       <MDBBtn><NavLink to="/home" style={{color:'white'}}> Home </NavLink></MDBBtn>
         <MDBBtn><NavLink to="/about" style={{color:'white'}}>About </NavLink></MDBBtn>
         <NavLink  to="/">

@@ -70,8 +70,7 @@ alert('gameover')
   render() {
     return (
       <div>
-        <nav>
-        <nav>
+        <nav className='mdbtn'>
       <MDBBtn><NavLink to="/home" style={{color:'white'}}> Home </NavLink></MDBBtn>
         <MDBBtn><NavLink to="/about" style={{color:'white'}}>About </NavLink></MDBBtn>
         <NavLink  to="/">
@@ -79,7 +78,6 @@ alert('gameover')
                 LogOut
           </MDBBtn>
       </NavLink>
-        </nav>
         </nav>
       <div className="question" style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
         <h2>Choose the correct answer</h2>

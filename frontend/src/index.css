@@ -47,7 +47,8 @@ align-items: flex-end;
   top: 10px;
 }
 .mdbtn{
-background-color:'#1976d2'
+display: flex;
+justify-content: center;
 }
 .deep-blue-gradient {
   background-image:'white';
