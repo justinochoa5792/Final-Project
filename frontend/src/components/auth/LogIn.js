@@ -12,12 +12,15 @@ class LogIn extends Component {
     handleSubmit = e => {
         e.preventDefault()
          actions.logIn(this.state).then(user => {
+             alert('logged in')
             this.props.setUser({...user.data})  
-        }).catch(({ response }) => console.error(response.data));
+        }).catch(({ response }) => console.error(response));
     }
+
+    
     render() {
         return (
-            <div className='background'>
+         <div className='background'>
             <div className='login'>
             <Fragment>
             <h1>Welcome to Iron Study Guide</h1>
@@ -26,12 +29,12 @@ class LogIn extends Component {
                     <input name="email" type="email" placeholder='juan23@gmail.com' onChange={this.handleChange} />
                     <input name="password" type="password" placeholder= '1234' onChange={this.handleChange} />
                    <input type="submit" value="Log In"/>
-                   <Link to ='/home'><input type="submit" value="Sign Up"/></Link>
+                  <Link><input type="submit" value="enter"/></Link> 
                 </form>
             </Fragment>
             </div>
-            </div>
-        );
+             </div> 
+        )
     }
 }
 
