@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { MDBCard, MDBBtn } from "mdbreact";
-import { NavLink} from "react-router-dom"
+import { MDBCard} from "mdbreact";
+import NavBar from './NavBar';
 import actions from "../services/index";
 
 class quiz extends Component {
@@ -34,7 +34,7 @@ class quiz extends Component {
 let questions= [...this.state.questions]
 questions.shift()
 this.setState({questions})
-if(questions.length ==0 )
+if(questions.length === 0 )
 alert('gameover')
   };
   showQuestions = () => {
@@ -70,15 +70,7 @@ alert('gameover')
   render() {
     return (
       <div>
-        <nav className='mdbtn'>
-      <MDBBtn><NavLink to="/home" style={{color:'white'}}> Home </NavLink></MDBBtn>
-        <MDBBtn><NavLink to="/about" style={{color:'white'}}>About </NavLink></MDBBtn>
-        <NavLink  to="/">
-          <MDBBtn onClick={actions.logOut} type="button">
-                LogOut
-          </MDBBtn>
-      </NavLink>
-        </nav>
+       <NavBar/>
       <div className="question" style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
         <h2>Choose the correct answer</h2>
         <h3>Correct:{this.state.correct}</h3>

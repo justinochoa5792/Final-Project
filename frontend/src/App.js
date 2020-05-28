@@ -28,7 +28,7 @@ class App extends Component {
   };
   render() {
     return (
-  <BrowserRouter>
+      <BrowserRouter>
         <Switch>
           <Route exact path="/" render={(props) => <LogIn user={this.state} {...props} setUser={this.setUser}/>} />
           <Route exact path="/home" render={(props) => <Home {...props} setUser={this.setUser} />} />
@@ -45,24 +45,3 @@ class App extends Component {
   }
 }
 export default App;
-
-{/* <BrowserRouter>
-{this.state.email}
-<nav>
-  <NavLink to="/home"> Home|</NavLink>
-  <NavLink to="/about">About |</NavLink>
-
-  {this.state.email ? (
-    <Fragment>
-      <NavLink onClick={this.logOut} to="/">
-        Log Out |
-      </NavLink>
-      <NavLink to="/profile">Profile|</NavLink>
-    </Fragment>
-  ) : (
-    <Fragment>
-      <NavLink to="/sign-up">Sign Up |</NavLink>
-      <NavLink to="/log-in">Log In |</NavLink>
-    </Fragment>
-  )}
-</nav> */}

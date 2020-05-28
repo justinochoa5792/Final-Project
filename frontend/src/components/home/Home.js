@@ -1,21 +1,14 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBCol, MDBCard, MDBIcon, MDBBtn } from "mdbreact";
-import { NavLink, Link } from "react-router-dom";
-import actions from '../../services/index'
+import { Link } from "react-router-dom";
+import NavBar from '../NavBar'
 
 class Home extends Component {
   render() {
     return (
       <div>
-        <nav className='mdbtn'>
-      <MDBBtn><NavLink to="/home" style={{color:'white'}}> Home </NavLink></MDBBtn>
-        <MDBBtn><NavLink to="/about" style={{color:'white'}}>About </NavLink></MDBBtn>
-        <NavLink  to="/">
-          <MDBBtn onClick={actions.logOut} type="button">
-                LogOut
-          </MDBBtn>
-      </NavLink>
-        </nav>
+      <NavBar/>
+
       <section className="text-center my-5">
         <h2 className="h1-responsive font-weight-bold my-5">
           Iron Study Guide
@@ -112,27 +105,3 @@ class Home extends Component {
   }
 }
 export default Home;
-//   import React, { Component } from "react";
-//   import { Link } from "react-router-dom";
-//   import Card from "../cards";
-
-//   async componentDidMount() {
-//     //actions.test()
-//   }
-
-//   render() {
-//     return (
-//       <div className="home">
-//         <Link className="quiz" to="/quiz">
-//           <Card name="JavaScript Quiz" image="/images/js.png"></Card>
-//         </Link>
-//         <Link className="quiz" to="/definition">
-//           <Card name="Definitions" image="/images/images.jpg"></Card>
-//         </Link>
-//         <Link className="quiz" to="/note">
-//           <Card name="Take Notes" image="/images/pen.jpg"></Card>
-//         </Link>
-//       </div>
-//     );
-//   }
-// }

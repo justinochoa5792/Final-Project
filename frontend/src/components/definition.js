@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import actions from "../services/index";
-import { NavLink } from "react-router-dom";
+import NavBar from './NavBar'
 import { MDBContainer, MDBCollapse, MDBCard, MDBCardBody, MDBCollapseHeader, MDBBtn } from "mdbreact";
 
 
@@ -46,15 +46,7 @@ class definition extends Component {
   render() {
     return (
       <div>
-         <nav className='mdbtn'>
-      <MDBBtn><NavLink to="/home" style={{color:'white'}}> Home </NavLink></MDBBtn>
-        <MDBBtn><NavLink to="/about" style={{color:'white'}}>About </NavLink></MDBBtn>
-        <NavLink  to="/">
-          <MDBBtn onClick={actions.logOut} type="button">
-                LogOut
-          </MDBBtn>
-      </NavLink>
-        </nav>
+       <NavBar/>
         <h2 style={{textAlign:'center'}}>Definitions</h2>
         {this.showDefinitions()}
       </div>

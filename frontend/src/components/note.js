@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import {NavLink} from 'react-router-dom';
+import NavBar from './NavBar'
 import actions from "../services/index";
-import {MDBBtn} from 'mdbreact'
 
 class note extends Component {
   state = {
@@ -46,19 +45,9 @@ class note extends Component {
   render() {
     return (
       <div>
-  <nav>
-  <nav className='mdbtn'>
-      <MDBBtn><NavLink to="/home" style={{color:'white'}}> Home </NavLink></MDBBtn>
-        <MDBBtn><NavLink to="/about" style={{color:'white'}}>About </NavLink></MDBBtn>
-        <NavLink  to="/">
-          <MDBBtn onClick={actions.logOut} type="button">
-                LogOut
-          </MDBBtn>
-      </NavLink>
-        </nav>
-        </nav>
-      <form onSubmit={(e) => this.handleSubmit(e)}>
-        <h4>Make your own notes</h4>
+  <NavBar/>
+      <form onSubmit={(e) => this.handleSubmit(e)} style={{margin:'20px'}}>
+        <h4 style= {{marginTop:'20px'}}> Make your own notes</h4>
         <div className="md-form md-outline">
           <textarea
             name="question"
