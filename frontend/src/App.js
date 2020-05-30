@@ -17,6 +17,7 @@ class App extends Component {
 
   async componentDidMount() {
     let user = await actions.isLoggedIn();
+    console.log(user)
     this.setState({ ...user.data });
   }
 
@@ -27,6 +28,7 @@ class App extends Component {
     this.setUser({ email: null, createdAt: null, updatedAt: null, _id: null }); //FIX
   };
   render() {
+    console.log(this.state)
     return (
       <BrowserRouter>
         <Switch>

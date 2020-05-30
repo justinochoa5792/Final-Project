@@ -21,12 +21,12 @@ class quiz extends Component {
   answerQuestion = (choice, answer) => {
     console.log(choice, answer);
     if (choice !== answer) {
-      alert("incorrect");
+      alert("I am sorry that is incorrect!")
       this.setState({
         incorrect: this.state.incorrect + 1,
       });
     } else {
-      alert("correct");
+      alert("Good Job that is correct!");
       this.setState({
         correct: this.state.correct + 1,
       });
@@ -35,7 +35,7 @@ let questions= [...this.state.questions]
 questions.shift()
 this.setState({questions})
 if(questions.length === 0 )
-alert('gameover')
+alert('I am sorry there are no more questions!')
   };
   showQuestions = () => {
     return this.state.questions.map((eachQuestion) => {

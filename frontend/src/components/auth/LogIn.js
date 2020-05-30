@@ -41,7 +41,7 @@ class LogIn extends Component {
               onChange={this.handleChange}
               style={{margin:'10px', borderRadius:'5px'}}
             />
-            <input type="submit" value="Log In" />
+          <input type="submit" value="Log In" />
             <p>Not a member?<Link to='/sign-up' style={{color:'white'}}>Sign Up</Link></p>
             </form>
         </Fragment>

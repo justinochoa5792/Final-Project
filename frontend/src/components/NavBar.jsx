@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import actions from "../services/index";
 import { MDBBtn } from "mdbreact"
 
+
 class NavBar extends Component {
   render() {
     return (
@@ -14,7 +15,7 @@ class NavBar extends Component {
         <MDBBtn style={{padding:'0.1rem'}} outline color="primary" onClick={actions.logOut} type="button">
              LogOut
        </MDBBtn>
-         </NavLink>
+       </NavLink>
        </nav>
      </div> 
     );
